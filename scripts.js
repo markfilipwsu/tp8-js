@@ -96,8 +96,25 @@ function checkWinning () {
   document.getElementById("mainTable").innerHTML = "You won!"
 }
 
+function shuffleCards() {
+  table = document.querySelector("#mainTable");
+  cardCount = table.children.length;
+ 
+  
+  for (c = 0; c < cardCount; c++) {
+    
+    randomCard = Math.floor( Math.random() * cardCount );
+   cardToMove = table.children[randomCard];
+    table.appendChild( cardToMove );
+    
+  }
+}
+
 // stuff to do when page loads
 window.onload = function() {
+  
+  shuffleCards();
+  
   
   cardList = document.querySelectorAll(".card"); // collection of cards
   
