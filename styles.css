@@ -37,6 +37,14 @@
   
 }
 
+.clicked .cardBack {
+  display: none;
+}
+
+.clicked .cardFront {
+  display: block;
+}
+
 .pic1 .cardFront {
   background-image: url(images/diamond.png);
   background-size: cover;
