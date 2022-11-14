@@ -6,7 +6,7 @@ cardsClicked = 0;
 
 // make sure the card hasnt been removed
 function cardClicked(what) {
-  if ( !what.classList.contains("matched") ) {
+  if ( what.classList.contains("clicked") ) {
     // its already clicked act appropriately
     what.classList.remove("clicked");
     cardsClicked--;
@@ -31,12 +31,17 @@ function cardCompare() {
   
   matched = false; //track if the cards matched 
   
-  if (clickedCards[0].classList.contains("pic1") && clickedCards[1].classList.contains("pic1") ) {
+  if ( clickedCards[0].classList.contains("pic1") && clickedCards[1].classList.contains("pic1") ) {
   matched = true; // they matched pic1
     
   } else if (clickedCards[0].classList.contains("pic2") && clickedCards[1].classList.contains("pic2") ) {
   matched = true; // they matched pic2
-}
+  } else if (clickedCards[0].classList.contains("pic3") && clickedCards[1].classList.contains("pic3") ) {
+  matched = true; // they matched pic3
+  } else if (clickedCards[0].classList.contains("pic4") && clickedCards[1].classList.contains("pic4") ) {
+  matched = true; // they matched pic4
+  }
+  
   
   if (matched) {
     // hide cards 
@@ -57,11 +62,11 @@ function removeCards(cardA, cardB) {
   
   
   pause = setTimeout(function() {
-  cardA.classList.remove("clicked");
-  cardB.classList.remove("clicked");
+  cardA.classList.remove("matched");
+  cardB.classList.remove("matched");
   
-  cardA.classList.add("matched");
-  cardB.classList.add("matched");
+  cardA.classList.add("removed");
+  cardB.classList.add("removed");
   
   cardsClicked = 0;
     

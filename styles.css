@@ -54,10 +54,23 @@
   background-size: cover;
 }
 
+.pic3 .cardFront {
+  background-image: url(images/hex.jpg);
+  background-size: cover;
+}
+
+.pic4 .cardFront {
+  background-image: url(images/pol.jpg);
+  background-size: cover;
+}
+
 
 .card .matched div {
   display: none;
 }
 
+.card.removed div {
+  display: none;
+}
 
 
